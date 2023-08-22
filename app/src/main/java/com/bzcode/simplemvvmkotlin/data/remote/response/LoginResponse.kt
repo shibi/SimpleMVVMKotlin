@@ -8,11 +8,11 @@ import com.google.gson.annotations.SerializedName
  */
 data class LoginResponse(
     @SerializedName("status")
-    private var status: Boolean? = null,
+    var status: Boolean? = null,
     @SerializedName("message")
-    private val message: String? = null,
+    val message: String? = null,
     @SerializedName("data")
-    private var data: User? = null
+    var data: User? = null
 )
 
 data class User(

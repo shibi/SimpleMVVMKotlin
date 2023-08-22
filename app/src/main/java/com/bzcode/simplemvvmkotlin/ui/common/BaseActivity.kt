@@ -1,6 +1,8 @@
 package com.bzcode.simplemvvmkotlin.ui.common
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -8,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.bzcode.simplemvvmkotlin.databinding.ViewloadingBinding
 
 /**
  * @author shibin
@@ -28,6 +31,8 @@ abstract class BaseActivity<T: ViewBinding> : AppCompatActivity() {
 
         setContentView(binding.root)
 
+        initLoadingViews()
+
         initView()
     }
 
@@ -35,6 +40,20 @@ abstract class BaseActivity<T: ViewBinding> : AppCompatActivity() {
     }
 
     protected abstract fun bindView(layoutInflater: LayoutInflater):T
+
+    private fun initLoadingViews(){
+
+        val layoutLoadingView = ViewloadingBinding.inflate(layoutInflater)
+
+        loadingDialog = AlertDialog.Builder(this,0 ).create()
+        loadingDialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+
+        loadingDialog.apply {
+            setView(layoutLoadingView.root)
+            setCancelable(false)
+        }
+        isLoadingInitialized = true
+    }
 
     protected abstract fun initView()
 

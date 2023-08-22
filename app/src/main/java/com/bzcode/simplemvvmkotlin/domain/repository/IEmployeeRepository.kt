@@ -11,8 +11,8 @@ import com.bzcode.simplemvvmkotlin.domain.utils.Resource
  */
 interface IEmployeeRepository {
 
-    fun requestLogin(email: String, phone: String): LiveData<Resource<User>>
+    suspend fun requestLogin(email: String, phone: String): LiveData<Resource<User>>
 
-    fun registerUser(name: String, email: String, phone: String): LiveData<Resource<RegisterResponse>>
+    suspend fun registerUser(name: String, email: String, phone: String): LiveData<Resource<RegisterResponse>>
 
 }
