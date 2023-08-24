@@ -1,5 +1,6 @@
 package com.bzcode.simplemvvmkotlin.domain.utils.extension
 
+import android.view.View
 import androidx.appcompat.widget.AppCompatEditText
 
 /**
@@ -17,4 +18,8 @@ fun AppCompatEditText.isNotFilled(errorMsg:String) : Boolean{
     }
 
     return true
+}
+
+fun View.onClick(block:()->Unit){
+    setOnClickListener(){block()}
 }

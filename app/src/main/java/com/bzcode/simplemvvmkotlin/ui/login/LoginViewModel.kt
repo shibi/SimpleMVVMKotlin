@@ -5,10 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
+
 import com.bzcode.simplemvvmkotlin.data.remote.response.User
 import com.bzcode.simplemvvmkotlin.domain.repository.IEmployeeRepository
 import com.bzcode.simplemvvmkotlin.domain.utils.Resource
 import com.bzcode.simplemvvmkotlin.ui.common.SharedViewModel
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 

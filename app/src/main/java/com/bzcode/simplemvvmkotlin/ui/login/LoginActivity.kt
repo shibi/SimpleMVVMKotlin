@@ -8,6 +8,7 @@ import com.bzcode.simplemvvmkotlin.data.repository.EmployeeRepository
 import com.bzcode.simplemvvmkotlin.databinding.ActivityLoginBinding
 import com.bzcode.simplemvvmkotlin.domain.utils.Resource
 import com.bzcode.simplemvvmkotlin.domain.utils.extension.isNotFilled
+import com.bzcode.simplemvvmkotlin.domain.utils.extension.onClick
 import com.bzcode.simplemvvmkotlin.ui.common.BaseActivity
 
 class LoginActivity : BaseActivity<ActivityLoginBinding>() {
@@ -29,7 +30,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
         setObserver()
 
-        binding.btnSignIn.setOnClickListener {
+        binding.btnSignIn.onClick {
             if (validate()) {
                 loginViewModel.requestLogin(
                     binding.etEmail.text.toString(),
@@ -37,7 +38,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
                 )
             }
         }
-
     }
 
     private fun setObserver() {
