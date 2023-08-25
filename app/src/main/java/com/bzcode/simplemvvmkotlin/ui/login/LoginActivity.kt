@@ -38,6 +38,8 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
                 )
             }
         }
+
+
     }
 
     private fun setObserver() {

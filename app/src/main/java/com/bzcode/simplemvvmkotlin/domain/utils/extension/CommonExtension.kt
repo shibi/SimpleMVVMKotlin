@@ -23,3 +23,17 @@ fun AppCompatEditText.isNotFilled(errorMsg:String) : Boolean{
 fun View.onClick(block:()->Unit){
     setOnClickListener(){block()}
 }
+
+fun View.visible(){
+    visibility = View.VISIBLE
+}
+fun View.hide(){
+    visibility = View.GONE
+}
+
+fun View.invisible(){
+    visibility = View.INVISIBLE
+}
+fun View.setClick(){
+
+}

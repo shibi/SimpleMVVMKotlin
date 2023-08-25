@@ -13,5 +13,6 @@ class SignUpActivity : BaseActivity<ActivitySignUpBinding>() {
 
     override fun initView() {
 
+
     }
 }

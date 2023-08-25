@@ -8,5 +8,11 @@ class Constants {
 
     companion object{
         const val DOMAIN_URL = "https://bzcode.free.beeceptor.com/"
+
+        const val VERSION = "v0.1"
+
+        const val BASE_URL = DOMAIN_URL+ "api/"
+
+
     }
 }

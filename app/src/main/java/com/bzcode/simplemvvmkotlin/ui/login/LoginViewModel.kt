@@ -12,6 +12,8 @@ import com.bzcode.simplemvvmkotlin.domain.utils.Resource
 import com.bzcode.simplemvvmkotlin.ui.common.SharedViewModel
 
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.launch
 
 /**
@@ -26,7 +28,7 @@ class LoginViewModel(private val repository: IEmployeeRepository): SharedViewMod
 
 
     fun requestLogin(email:String, phone:String){
-        viewModelScope.launch(Dispatchers.IO){
+        viewModelScope.launch(Dispatchers.IO) {
             val result = repository.requestLogin(email, phone)
             loginMutableLiveData.postValue(result.value)
         }
